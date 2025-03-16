@@ -448,3 +448,54 @@ body.dark-theme {
 .dark-theme .btn:hover {
     background-color: #ab47bc;
 }
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0a3d62;
+    overflow: hidden;
+}
+
+.animation-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.animation-object {
+    width: 100px;
+    height: 100px;
+    background-image: url('deer.png'); /* Изображение оленя */
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation: runAndTransform 10s infinite;
+}
+
+@keyframes runAndTransform {
+    0% {
+        background-image: url('deer.png'); /* Олень */
+        transform: translateY(-50%) translateX(0);
+    }
+    25% {
+        background-image: url('deer.png'); /* Олень бежит */
+        transform: translateY(-50%) translateX(200px);
+    }
+    50% {
+        background-image: url('car.png'); /* Олень превращается в машину */
+        transform: translateY(-50%) translateX(400px);
+    }
+    75% {
+        background-image: url('car.png'); /* Машина едет */
+        transform: translateY(-50%) translateX(600px);
+    }
+    100% {
+        background-image: url('moon.png'); /* Машина превращается в луну */
+        transform: translateY(-50%) translateX(800px);
+    }
+}
